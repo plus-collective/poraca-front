@@ -1,7 +1,6 @@
 import React from 'react';
 
-import DistrictFilterBiz from '../../components/district-filter-biz';
-import Popup from '../../components/popup';
+import DistrictSelector from '../../components/district-selector';
 import ListElement from '../../components/list-element';
 import Tags from '../../components/tags';
 
@@ -12,7 +11,12 @@ function BizsList(props) {
       <div class="hero is-primary pt-6">
         <div class="hero-body pb-4">
           <div class="container has-text-centered is-vcentered">
-              <DistrictFilterBiz></DistrictFilterBiz>
+              {/* <DistrictFilterBiz></DistrictFilterBiz> */}
+              <DistrictSelector
+                action={props.handleDistrictChange}
+                districts={props.districts}
+                selectedDistrict= {props.selectedDistrict}
+              ></DistrictSelector>
           </div>
         </div>
       </div>

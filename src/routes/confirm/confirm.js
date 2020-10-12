@@ -1,13 +1,9 @@
 import React from 'react';
 
 import Button from '../../components/button';
-import DistrictFilterHome from '../../components/district-filter-home';
-import DistrictFilterBiz from '../../components/district-filter-biz';
-import Popup from '../../components/popup';
-import ListElement from '../../components/list-element';
-import Tags from '../../components/tags';
+
 import HeaderBiz from '../../components/header-biz';
-import FooterBiz from '../../components/footer-biz';
+
 
 import './confirm.css';
 

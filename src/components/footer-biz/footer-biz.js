@@ -1,11 +1,6 @@
 import React from 'react';
 
 import Button from '../button';
-import DistrictFilterHome from '../district-filter-home';
-import DistrictFilterBiz from '../district-filter-biz';
-import Popup from '../popup';
-import ListElement from '../list-element';
-import Tags from '../tags';
 
 import './footer-biz.css';
 

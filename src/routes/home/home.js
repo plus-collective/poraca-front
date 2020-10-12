@@ -1,11 +1,8 @@
 import React from 'react';
 
 import Button from '../../components/button';
-import DistrictFilterHome from '../../components/district-filter-home';
-import DistrictFilterBiz from '../../components/district-filter-biz';
-import Popup from '../../components/popup';
-import ListElement from '../../components/list-element';
-import Tags from '../../components/tags';
+import DistrictSelector from '../../components/district-selector';
+
 
 import './home.css';
 
@@ -18,7 +15,12 @@ function Home(props){
             ¿En que barrio estas?
           </h1>
           <div className="block">
-            <DistrictFilterHome></DistrictFilterHome>
+            <DistrictSelector 
+              action={props.handleDistrictChange}
+              districts={props.districts}
+              selectedDistrict={props.selectedDistrict}
+              >
+              </DistrictSelector>
           </div>
           <div className="block">
             <Button text="BUSCAR" action="/bizslist"></Button>
@@ -26,14 +28,6 @@ function Home(props){
         </div>
       </div>
     </section>
-
-
-      
-    //   {/* <Popup></Popup> */}
-    //   {/* <Tags></Tags>
-    //   <ListElement opt="biz"></ListElement> */}
-    //   {/* <ListElement opt="product"></ListElement> */}
-    // </div>
   );
 }
 
