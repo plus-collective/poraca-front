@@ -1,0 +1,10 @@
+.wrapper-biz-img {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+hr.line {
+  border-top: 1px solid #8c8b8b;
+}
