@@ -1,0 +1,73 @@
+/* STYLES FOR HORIZONTAL CARD */
+
+.card.is-horizontal {
+  flex-direction: row;
+  display: flex;
+  flex-basis: 50ex;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+.card.is-horizontal .card-image {
+  flex: 2;
+  flex-shrink: 2;
+}
+.card.is-horizontal .card-image .image {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.card.is-horizontal .card-image .image img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.card.is-horizontal .card-image .card-content {
+  flex: 3;
+  flex-shrink: 3;
+}
+
+.card.is-horizontal.is-half .card-image {
+  flex: 6;
+}
+.card.is-horizontal.is-half .card-content {
+  flex: 6;
+}
+
+.card.is-horizontal.is-quarter .card-image {
+  flex: 3;
+}
+.card.is-horizontal.is-quarter .card-content {
+  flex: 9;
+}
+.card.is-horizontal.is-third .card-image {
+  flex: 4;
+}
+.card.is-horizontal.is-third .card-content {
+  flex: 8;
+}
+
+.card.is-horizontal.is-twothird .card-image {
+  flex: 8;
+}
+.card.is-horizontal.is-twothird .card-content {
+  flex: 4;
+}
+
+.card-img-biz {
+  border-radius: 1.5rem;
+  padding: 0.75rem;
+}
+
+.card-aditional-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card-aditional-content a,
+p {
+  font-size: 0.6rem;
+}

@@ -10,7 +10,7 @@ import CardContent from '../card/card-content'
 
 import Card from '../card'
 
-import './card-list.css';
+
 
 class CardList extends Component {
 
@@ -18,9 +18,6 @@ class CardList extends Component {
         super(props);
         this.state = {
             linkTo : "",
-            classImage: "",
-            renderBtnProduct: null,
-            btnProduct: null,
         }
     }
     componentDidMount() {  
@@ -28,14 +25,11 @@ class CardList extends Component {
             case "biz":
                 this.setState({      
                     linkTo : "/biz/",
-                    styleImg: "card-img-biz",
-                    btnProduct: false,
                 });
                 break;
             case "product":
                 this.setState({      
                     linkTo : "/biz/",
-                    btnProduct: true
                 });
                 break;
             default:
@@ -44,21 +38,6 @@ class CardList extends Component {
     }
 
     render() {
-
-        const renderBtnProduct = () => {
-            if (this.state.btnProduct) {
-                return (
-                    <div>
-                        <button className="button is-small is-danger is-light">
-                            <FontAwesomeIcon icon={faMinus} />
-                        </button>
-                        <button className="button is-small is-success is-light">
-                            <FontAwesomeIcon icon={faPlus} />
-                        </button>
-                    </div>
-                )
-            }              
-        }
 
         const footerSpace = {
             height: "100px",
@@ -78,11 +57,11 @@ class CardList extends Component {
                     (element) => {
                         return ( 
                             <Card
+                                opt = {this.props.opt}
                                 name = {element.name}
                                 slug = {element.slug}
                                 link = {this.state.linkTo}
                                 logo = {element.logo}
-                                style = "biz"
                                 data = {element}
                                 handlerSelectBiz = {this.props.handlerSelectBiz}
                             ></Card>

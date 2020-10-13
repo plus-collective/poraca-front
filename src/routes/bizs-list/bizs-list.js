@@ -99,7 +99,6 @@ class BizsList extends Component {
 
   render(){
     return (
-
       <div>
         <div className="hero is-primary pt-6">
           <div className="hero-body pb-4">

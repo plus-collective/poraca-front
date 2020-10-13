@@ -6,27 +6,26 @@ import ListElement from '../../components/card-list';
 import HeaderBiz from '../../components/header-biz';
 import FooterBiz from '../../components/footer-biz';
 
-function Business(props) {
+function Biz(props) {
     return (
-    <div>
-      <HeaderBiz 
-        bizName={props.bizData.name} 
-        bizSched={props.bizData.horario}
-        bizLogo={props.bizData.logo}
-      ></HeaderBiz>
-      <div class="container">
-        <ListElement opt="product"></ListElement>
-        <FooterBiz></FooterBiz>
+      <div>
+        <HeaderBiz 
+          bizName={props.bizData.name} 
+          bizSched={props.bizData.horario}
+          bizLogo={props.bizData.logo}
+        ></HeaderBiz>
+        <div class="container">
+          <ListElement opt="product"></ListElement>
+          <FooterBiz></FooterBiz>
+        </div>
       </div>
-    </div>
-
     ) }
     
 
-Business.propTypes = {
+Biz.propTypes = {
     data: PropTypes.object,
 };
-Business.defaultProps = {
+Biz.defaultProps = {
   bizData: 
       {
           "pk": 1,
@@ -47,4 +46,4 @@ Business.defaultProps = {
           "owner": "test@admin"
       }
   };
-export default Business;
+export default Biz;
