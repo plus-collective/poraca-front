@@ -8,15 +8,15 @@ import './home.css';
 
 function Home(props){
   return (
-    <section class="hero is-primary is-fullheight">
-      <div class="hero-body">
-        <div class="container p-5 has-text-centered is-vcentered">
-          <h1 class="title is-3">
+    <section className="hero is-primary is-fullheight">
+      <div className="hero-body">
+        <div className="container p-5 has-text-centered is-vcentered">
+          <h1 className="title is-3">
             ¿En que barrio estas?
           </h1>
           <div className="block">
             <DistrictSelector 
-              action={props.handleDistrictChange}
+              handleDistrictChange={props.handleDistrictChange}
               districts={props.districts}
               selectedDistrict={props.selectedDistrict}
               >

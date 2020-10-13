@@ -25,18 +25,32 @@ class App extends Component {
     // Set some state
     this.state = {
       // EXTRAER LOS DISTRICT DE LA API O PONER TODO CABA ACA
-        districts: [
-          "Palermo",
-          "Recoleta",
-          "Almagro",
-          "Balvanera",
-          "Colegiales"
-       ],
-        selectedDistrict: null,
-        selectedBiz: null,
-        selectedTag: null,
-        cart: []
-    };
+      districts: [
+        "Palermo",
+        "Recoleta",
+        "Almagro",
+        "Balvanera",
+        "Colegiales"
+      ],
+      tags: [
+        "Todos",
+        "Dulce",
+        "Salado"
+      ],
+      selectedDistrict: null,
+      selectedBiz: null,
+      selectedTag: null,
+      cart: 
+        {
+          products: [{
+            name:null,
+            quantity: null,
+            price: null
+            }],
+          totalItem: null,
+          totalPrice: null
+        }
+      };
   }
 
   // This method will be sent to the child component
@@ -45,15 +59,15 @@ class App extends Component {
         selectedDistrict: event.target.value
     });
   }
-  handlerSelectBiz(event) {
+  handlerSelectBiz(biz) {
     this.setState({
-        selectedDistrict: event
+      selectedBiz: biz
     });
   }
-
-  handlerSelectTag(event) {
+  handlerSelectTag(tagName) {
+    console.log('I was triggered during render')
     this.setState({
-        selectedTag: event
+        selectedTag: tagName
     });
   }
   handlerCart(cart){
@@ -76,8 +90,8 @@ class App extends Component {
                 path="/home"
                 render={props => (
                   <Home
-                    handleDistrictChange ={this.handlerSelectDistrict}
                     districts = {this.state.districts}
+                    handleDistrictChange ={this.handlerSelectDistrict}
                     selectedDistrict = {this.state.selectedDistrict}
                   />
                 )}
@@ -87,18 +101,20 @@ class App extends Component {
                 path="/bizslist"
                 render={props => (
                   <BizsList
-                    handleDistrictChange ={this.handlerSelectDistrict}
                     districts = {this.state.districts}
+                    tags={this.state.tags}
                     selectedDistrict = {this.state.selectedDistrict}
+                    selectedTag = {this.state.selectedTag}
+                    handleDistrictChange ={this.handlerSelectDistrict}
                     handlerSelectBiz ={this.handlerSelectBiz}
                     handlerSelectTag ={this.handlerSelectTag}
                   />
                 )}
               />
-            <Route
-                exact
-                path="/biz"
-                component={Business} />
+            <Route 
+              path="/biz/:slug" 
+              render={()=> <Business parentState={this.state} />} 
+            />
             <Route
                 exact
                 path="/confirm"

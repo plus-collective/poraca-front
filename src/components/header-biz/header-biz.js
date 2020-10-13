@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import DistrictFilterBiz from '../../components/district-filter-biz';
-import Popup from '../../components/popup';
-import ListElement from '../../components/list-element';
-import Tags from '../../components/tags';
-import FooterBiz from '../../components/footer-biz';
+
 
 import './header-biz.css';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Popup from '../../components/popup';
-import ListElement from '../../components/list-element';
+import ListElement from '../../components/card-list';
 import HeaderBiz from '../../components/header-biz';
 import FooterBiz from '../../components/footer-biz';
 
@@ -21,6 +21,7 @@ function Business(props) {
     </div>
 
     ) }
+    
 
 Business.propTypes = {
     data: PropTypes.object,

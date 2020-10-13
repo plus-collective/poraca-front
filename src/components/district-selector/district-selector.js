@@ -5,14 +5,10 @@ import './district-selector.css';
 
 class DistrictSelector extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
-            <div class="select">
-                <select onChange={this.props.action} value={this.props.selectedDistrict}>
+            <div className="select">
+                <select onChange={this.props.handleDistrictChange} value={this.props.selectedDistrict}>
                     <option>Seleccionar</option>
                     {
                         this.props.districts.map(
@@ -25,17 +21,17 @@ class DistrictSelector extends Component {
             </div>
         );
     }
-  }
+}
 
-  DistrictSelector.propTypes = {
-    action: PropTypes.func,
+DistrictSelector.propTypes = {
+    handleDistrictChange: PropTypes.func,
     districts: PropTypes.array,
     selectedDistrict: PropTypes.string
-  };
-  DistrictSelector.defaultProps = {
+};
+DistrictSelector.defaultProps = {
     districts: [
-           "Palermo"
-        ],
-  };
+        "Palermo"
+    ],
+};
   
 export default DistrictSelector;

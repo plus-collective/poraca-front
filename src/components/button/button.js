@@ -9,7 +9,7 @@ function Button(props) {
 
     const renderWppLogo = ()=>{
         if(props.wpp){
-          return <span class="icon"> <img src={WppImg} alt="whatsapp logo" /> </span>
+          return <span className="icon"> <img src={WppImg} alt="whatsapp logo" /> </span>
         } else{
           return 
         }
