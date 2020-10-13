@@ -37,7 +37,7 @@ class App extends Component {
         "Dulce",
         "Salado"
       ],
-      selectedDistrict: null,
+      selectedDistrict: "Todos",
       selectedBiz: null,
       selectedTag: null,
       cart: 

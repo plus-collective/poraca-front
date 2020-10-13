@@ -65,7 +65,7 @@ class CardList extends Component {
         };
 
         let data;
-        if(this.props.selectedDistrict === null){
+        if(this.props.selectedDistrict === "Todos"){
             data = this.props.data;
         }else {
             data = this.props.data.filter(element => element.barrio === this.props.selectedDistrict);
