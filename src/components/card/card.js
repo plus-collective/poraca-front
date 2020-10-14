@@ -46,17 +46,17 @@ function CardBiz(props){
 
 function CardProd(props){
     return (
-        <Link to={ "/biz/" + props.slug} onClick={() => props.handlerSelectBiz(props.slug)}>
+        // <Link to={ "/biz/" + props.data.slug} onClick={() => props.handlerSelectBiz(props.data.slug)}>
+        <Link >
             <div className="card is-horizontal is-third m-2">
                 <CardImage
-                    name= {props.name}
-                    logo= {props.logo}
-                    styleImg= "card-img-biz"
+                    name= {props.data.name}
+                    logo= {props.data.imagen}
+                    styleImg= ""
                 ></CardImage>
                 {/* PASAR DATA Y OPT */}
                 <CardContentProd
-                    opt = {props.opt}
-                    name= {props.name}
+                    name= {props.data.name}
                     barrio = {props.data.barrio}
                     descripcion = {props.data.descripcion}
                     cont_whatsapp = {props.data.cont_whatsapp}

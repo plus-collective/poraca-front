@@ -112,7 +112,11 @@ class App extends Component {
               />
             <Route 
               path="/biz/:slug" 
-              render={()=> <Biz parentState={this.state} />} 
+              render={()=> <Biz 
+                parentState={this.state} 
+                cart={this.state.cart}
+                />
+              } 
             />
             <Route
                 exact

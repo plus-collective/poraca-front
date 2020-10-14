@@ -14,7 +14,7 @@ class BizsList extends Component {
   }
 
   componentDidMount(){
-    // FETCH BIZ API
+    // FETCH BIZs API
     this.setState({
       bizsData : [
         {
@@ -95,8 +95,6 @@ class BizsList extends Component {
         }
       ]
     });
-
-
   }
 
 
