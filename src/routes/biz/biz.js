@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Popup from '../../components/popup';
-import ListElement from '../../components/card-list';
 import HeaderBiz from '../../components/header-biz';
 import FooterBiz from '../../components/footer-biz';
 
@@ -15,7 +14,7 @@ function Biz(props) {
           bizLogo={props.bizData.logo}
         ></HeaderBiz>
         <div class="container">
-          <ListElement opt="product"></ListElement>
+          {/* <ListElement opt="product"></ListElement> */}
           <FooterBiz></FooterBiz>
         </div>
       </div>

@@ -9,7 +9,7 @@ class DistrictSelector extends Component {
         return (
             <div className="select">
                 <select onChange={this.props.handleDistrictChange} value={this.props.selectedDistrict}>
-                    <option value="Todos">- Ver todos -</option>
+                    <option value="AllDistricts">- Ver todos -</option>
                     {
                         this.props.districts.map(
                             (district,id) =>{

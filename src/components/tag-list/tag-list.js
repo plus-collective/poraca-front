@@ -7,6 +7,12 @@ import './tag-list.css';
 function Tags(props){
     return (
         <div className="tags are-medium are-rounded m-3">
+          <button 
+                type="button"
+                className="link-button" 
+                >
+            <span className="tag is-danger is-light mx-1" onClick={() => props.handlerSelectTag("AllTags")}>Todos</span>
+          </button>
           {
             props.tags.map(
               (name) => {

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 // import logo from '../../images/logo.svg';
 
 import Home from '../../routes/home';
-import Business from '../../routes/business';
+import Biz from '../../routes/biz';
 import BizsList from '../../routes/bizs-list';
 import Confirm from '../../routes/confirm';
 import NavBar from '../navbar';
@@ -33,13 +33,12 @@ class App extends Component {
         "Colegiales"
       ],
       tags: [
-        "Todos",
         "Dulce",
         "Salado"
       ],
-      selectedDistrict: "Todos",
+      selectedDistrict: "AllDistricts",
       selectedBiz: null,
-      selectedTag: null,
+      selectedTag: "AllTags",
       cart: 
         {
           products: [{
@@ -113,7 +112,7 @@ class App extends Component {
               />
             <Route 
               path="/biz/:slug" 
-              render={()=> <Business parentState={this.state} />} 
+              render={()=> <Biz parentState={this.state} />} 
             />
             <Route
                 exact

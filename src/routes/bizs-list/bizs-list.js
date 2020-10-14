@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 
 import DistrictSelector from '../../components/district-selector';
-import CardList from '../../components/card-list';
+import Card from '../../components/card'
 import TagList from '../../components/tag-list';
 
 class BizsList extends Component {
+  
   constructor(props) {
     super(props)
     this.state = {
@@ -94,10 +95,46 @@ class BizsList extends Component {
         }
       ]
     });
+
+
   }
 
 
+  // FILTROS DE LOS EMPRENDIMIENTOS
+
+  filterBizs(bizsData){
+    if(this.props.selectedDistrict ==="Todos" && this.props.selectedTag ==="Todos"){
+      return bizsData;
+    } else if(this.props.selectedDistrict ==="Todos"){
+      // Filter by district
+      return bizsData.filter(element => element.barrio === this.props.selectedDistrict);
+    } else if(this.props.selectedTag ==="Todos"){
+      // Filter by tag
+      return bizsData.filter(element => element.barrio === this.props.selectedDistrict);
+    }
+  }
+
+  filterByDistrict(bizsData){
+    if(this.props.selectedDistrict === "AllDistricts"){
+        return bizsData;
+    } else {
+      return bizsData.filter(element => element.barrio === this.props.selectedDistrict);
+    }
+  } 
+
+  filterByTag(bizsData){
+    if(this.props.selectedTag === "AllTags"){
+        return bizsData;
+    }else {
+      return bizsData.filter(element => element.tag === this.props.selectedTag);
+    }
+  } 
+
   render(){
+
+    let dataFiltered = this.filterByDistrict(this.state.bizsData);
+    dataFiltered = this.filterByTag(dataFiltered);
+
     return (
       <div>
         <div className="hero is-primary pt-6">
@@ -116,15 +153,20 @@ class BizsList extends Component {
           tags={this.props.tags}
           ></TagList>
 
-        <CardList 
-          opt="biz" 
-          data={this.state.bizsData}
-          handlerSelectBiz = {this.props.handlerSelectBiz}
-          selectedDistrict= {this.props.selectedDistrict}
-          selectedTag = {this.props.selectedTag}
-          >
-        </CardList>
-
+        <div>
+          {
+          dataFiltered.map(
+              (element) => {
+                  return ( 
+                      <Card
+                          opt = "biz"
+                          data = {element}
+                          handlerSelectBiz = {this.props.handlerSelectBiz}
+                      ></Card>
+                  )
+              })
+          }   
+        </div>
       </div>
     ) 
   }

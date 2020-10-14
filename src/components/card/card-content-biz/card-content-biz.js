@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function CardContent(props){
+function CardContentBiz(props){
     return (
         <div className="card-content p-4">
             <div className="media mb-2">
@@ -17,18 +17,16 @@ function CardContent(props){
                     <p className="has-text-weight-bold pr-1 m-0">{props.barrio}</p>
                     |
                     <a className="pl-1 pr-5" href={"tel:" + props.cont_whatsapp}>{props.cont_whatsapp}</a>
-                    {/* QUITAR LA FUNCIONALIDAD DE AGREGAR O QUITAR ELEMENTOS DE ESTE COMPONENTE*/}
-                    {/* {renderBtnProduct()} */}
                 </div>
             </div>
         </div>
       );
 }
 
-CardContent.propTypes = {
+CardContentBiz.propTypes = {
     logo: PropTypes.string,
     name: PropTypes.string,
     styleImg: PropTypes.string,
 };
 
-export default CardContent;
+export default CardContentBiz;
